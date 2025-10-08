@@ -1,0 +1,34 @@
+
+services:
+  web:
+    build:
+      context: .
+    container_name: lunchpicker_web
+    command: /code/entrypoint.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_DB=lunchpicker_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=lunchpicker_db  # тут ім'я контейнера БД
+
+  db:
+    image: postgres:15
+    container_name: lunchpicker_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: lunchpicker_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+
+volumes:
+  postgres_data:
+

@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.egg
+*.egg-info/
+*.dist-info/
+.env
+venv/
+env/
+.idea/
+.vscode/
+
+# Django
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+
+# Migrations
+*/migrations/*.pyc
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Media files
+media/
+staticfiles/
+static/
+
+# Docker
+*.env
+docker-compose.override.yml
+.docker/
+**/__pycache__/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+
+# VS Code settings
+.vscode/
