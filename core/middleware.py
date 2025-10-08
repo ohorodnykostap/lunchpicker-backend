@@ -1,7 +1,5 @@
 class BuildVersionMiddleware:
-    '''
-    Додає request.build_version (string) з заголовка X-Build-Version.
-    '''
+
     def __init__(self, get_response):
         self.get_response = get_response
 

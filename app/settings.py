@@ -2,21 +2,17 @@ import os
 from pathlib import Path
 
 
-# Базовий шлях проекту
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Безпека
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', 'replace-me-with-a-secret-key'
 )
 DEBUG = True  # для продакшн ставимо False
 
-# Для запуску через Docker / localhost
 ALLOWED_HOSTS = ['*']
 
 
-# Додатки
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,7 +80,6 @@ DATABASES = {
 }
 
 
-# Django REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -92,7 +87,6 @@ REST_FRAMEWORK = {
 }
 
 
-# Паролі
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': (
@@ -121,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Локалізація
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Europe/Kyiv'
 USE_I18N = True
@@ -129,7 +122,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Статичні файли
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
